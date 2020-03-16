@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+
+  app:
+    container_name: login-system
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./www/:/var/www/
+    expose:
+      - 80
+      - 443
+    ports:
+      - 80:80
+    links: 
+      - database
+    networks:
+      lg_net:
+        ipv4_address: 172.50.10.2
+
+  database:
+    container_name: mysql-kumbiaphp
+    image: mysql:5.7
+    command: --max_allowed_packet=1024M
+    restart: always
+    environment:
+      - MYSQL_DATABASE=login_system
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=kumbiaphp
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    networks:
+      lg_net:
+       ipv4_address: 172.50.10.3
+networks:
+  lg_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.50.0.0/16

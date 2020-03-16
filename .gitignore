@@ -1,0 +1,21 @@
+# MySQL files #
+######################
+/data/*
+
+# KumbiaPHP files #
+######################
+/www/vendor/*
+/www/default/app/temp/cache/*
+!/www/default/app/temp/cache/empty
+/www/default/app/temp/logs/*
+!/www/default/app/temp/logs/empty
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
