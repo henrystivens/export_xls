@@ -8,19 +8,19 @@ return [
         /**
          * host: ip o nombre del host de la base de datos
          */
-        'host'     => 'localhost',
+        'host'     => 'mysql-kumbiaphp',
         /**
          * username: usuario con permisos en la base de datos
          */
-        'username' => 'root', //no es recomendable usar el usuario root
+        'username' => 'kumbiaphp', //no es recomendable usar el usuario root
         /**
          * password: clave del usuario de la base de datos
          */
-        'password' => '',
+        'password' => 'password',
         /**
          * test: nombre de la base de datos
          */
-        'name'     => 'test',
+        'name'     => 'export_xlsx',
         /**
          * type: tipo de motor de base de datos (mysql, pgsql, oracle o sqlite)
          */
