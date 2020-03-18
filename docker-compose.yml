@@ -27,7 +27,7 @@ services:
     command: --max_allowed_packet=1024M
     restart: always
     environment:
-      - MYSQL_DATABASE=login_system
+      - MYSQL_DATABASE=export_xlsx
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_USER=kumbiaphp
       - MYSQL_PASSWORD=password
