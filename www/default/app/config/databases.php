@@ -20,7 +20,7 @@ return [
         /**
          * test: nombre de la base de datos
          */
-        'name'     => 'export_xlsx',
+        'name'     => 'export_xls',
         /**
          * type: tipo de motor de base de datos (mysql, pgsql, oracle o sqlite)
          */
