@@ -1,0 +1,25 @@
+<Table ss:ExpandedColumnCount="4"
+ ss:ExpandedRowCount="<?php echo (count($data) + 1); ?>"
+ x:FullColumns="1" x:FullRows="1">
+ <Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="154.5"/>
+ <Row ss:StyleID="s23">
+ <Cell><Data
+   ss:Type="String">Nombre</Data></Cell>
+ <Cell><Data
+  ss:Type="String">Edad</Data></Cell>
+ <Cell><Data
+   ss:Type="String">Correo</Data></Cell>
+ </Row>
+<?php foreach ($data as $item) : ?>
+ <Row>
+ <Cell><Data
+    ss:Type="String"><?= $item->name ?>
+ </Data></Cell>
+ <Cell><Data
+   ss:Type="String"><?= $item->age ?>
+ </Data></Cell>
+ <Cell ss:StyleID="s21"><Data ss:Type="String">
+ <?= $item->email ?></Data></Cell>
+ </Row>
+<?php endforeach ?>
+ </Table>
