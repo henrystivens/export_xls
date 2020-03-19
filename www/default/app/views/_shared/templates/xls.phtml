@@ -1,0 +1,68 @@
+<?php
+header('Content-type: application/excel');
+header('Content-Disposition: attachment; filename="' . $fileName . '.xml"');
+
+print "<?xml version=\"1.0\"?>\n";
+print "<?mso-application progid=\"Excel.Sheet\"?>\n";
+?>
+
+ <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties
+    xmlns="urn:schemas-microsoft-com:office:office">
+<Author>KumbiaPHP</Author>
+ <LastAuthor>KumbiaPHP</LastAuthor>
+ <Created><?= date('c') ?></Created>
+ <LastSaved><?= date('c') ?></LastSaved>
+ <Company>KumbiaPHP</Company>
+ <Version>1.0</Version>
+ </DocumentProperties>
+ <ExcelWorkbook
+    xmlns="urn:schemas-microsoft-com:office:excel">
+ <WindowHeight>8535</WindowHeight>
+ <WindowWidth>12345</WindowWidth>
+ <WindowTopX>480</WindowTopX>
+ <WindowTopY>90</WindowTopY>
+ <ProtectStructure>False</ProtectStructure>
+ <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+ <Alignment ss:Vertical="Bottom"/>
+ <Borders/>
+ <Font/>
+ <Interior/>
+ <NumberFormat/>
+ <Protection/>
+ </Style>
+ <Style ss:ID="s21" ss:Name="Hyperlink">
+ <Font ss:Color="#0000FF" ss:Underline="Single"/>
+ </Style>
+ <Style ss:ID="s23">
+ <Font x:Family="Swiss" ss:Bold="1"/>
+ </Style>
+ </Styles>
+ <Worksheet ss:Name="Names">
+ <?php View::content(); ?>
+ <WorksheetOptions
+    xmlns="urn:schemas-microsoft-com:office:excel">
+ <Print>
+ <ValidPrinterInfo/>
+ <HorizontalResolution>300</HorizontalResolution>
+ <VerticalResolution>300</VerticalResolution>
+ </Print>
+ <Selected/>
+ <Panes>
+ <Pane>
+ <Number>3</Number>
+ <ActiveRow>1</ActiveRow>
+ </Pane>
+ </Panes>
+ <ProtectObjects>False</ProtectObjects>
+ <ProtectScenarios>False</ProtectScenarios>
+ </WorksheetOptions>
+ </Worksheet>
+ </Workbook>
