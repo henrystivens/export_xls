@@ -71,11 +71,11 @@ class UserController extends AppController
 
     public function xls()
     {
-        //Usa el tempalte 'pdf'
+        //Usa el tempalte 'xls'
         View::template('xls');
         //Modifica el nombre del archivo a descargar
         $this->fileName = 'listado-de-usuarios';
-        ////Modifica el título del documento PDF en la cabecera
+        //Modifica el título del documento XLS en la cabecera
         $this->title = 'Listado de usuarios';
         $this->data = (new User)->find();
     }
